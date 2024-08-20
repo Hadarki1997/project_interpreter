@@ -7,7 +7,7 @@
 <statement> ::= <expression> ";"
               | "defun" <identifier> "(" <param_list> ")" "{" <statement_list> "}"
               | <if_statement>
--- פקודה יכולה להיות ביטוי עם נקודה-פסיק, הגדרת פונקציה, או פקודת תנאי
+-- פקודה יכולה להיות הגדרת פונקציה, או פקודת תנאי
 
 <expression> ::= <term> <binop> <term>
                | <unaryop> <term>
