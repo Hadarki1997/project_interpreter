@@ -1,0 +1,47 @@
+# Define basic arithmetic functions
+defun add(a, b) { a + b }
+defun multiply(x, y) { x * y }
+
+# Define a recursive factorial function
+defun factorial(n) { n == 0 || n * factorial(n - 1) }
+
+# Define a function to sum three numbers
+defun sum(a, b, c) { a + b + c }
+
+# Define functions to check if a number is even or odd
+defun iseven(x) { x % 2 == 0 }
+defun isodd(x) { x % 2 != 0 }
+
+# Define a function that applies another function twice
+defun applytwice(f, x) { f(f(x)) }
+
+# Simple function to add one to its argument
+defun addone(x) { x + 1 }
+
+# Use the lambda function directly to calculate the square of a number
+lambd(x) ( x * x )(4)  # Expected output: 16
+
+# Arithmetic operations
+3 + 5
+10 - 4
+6 * 7
+8 / 2
+10 % 3
+
+# Boolean operations
+True && False
+True || False
+!True
+5 > 3
+5 < 3
+(3 > 0) && (2 < 10)
+
+# Conditional statements
+if True 1 else 2
+if False 1 else 2
+
+# Function calls
+factorial(5)   # Expected output: 120
+iseven(4)      # Expected output: True
+isodd(7)       # Expected output: True
+sum(1, 2, 3)   # Expected output: 6

@@ -1,0 +1,66 @@
+<program> ::= <statement_list>
+-- תוכנית היא רשימה של פקודות
+
+<statement_list> ::= <statement> | <statement> <statement_list>
+-- רשימת פקודות יכולה להיות פקודה אחת או מספר פקודות
+
+<statement> ::= <expression> ";"
+              | "defun" <identifier> "(" <param_list> ")" "{" <statement_list> "}"
+              | <if_statement>
+-- פקודה יכולה להיות ביטוי עם נקודה-פסיק, הגדרת פונקציה, או פקודת תנאי
+
+<expression> ::= <term> <binop> <term>
+               | <unaryop> <term>
+               | <term>
+               | <function_call>
+               | <if_expression>
+               | <lambda_expression>
+-- ביטוי יכול להיות פעולה בינארית, פעולה יונארית, ערך יחיד, קריאה לפונקציה, תנאי, או למבדה
+
+<term> ::= <integer>
+         | <boolean>
+         | <identifier>
+         | "(" <expression> ")"
+-- מונח יכול להיות מספר שלם, ערך בוליאני, מזהה, או ביטוי תחום בסוגריים
+
+<binop> ::= "+" | "-" | "*" | "/" | "%" | "&&" | "||" | "==" | "!=" | ">" | "<" | ">=" | "<="
+-- אופרטורים בינאריים: פעולות חשבון, פעולות לוגיות, או השוואות
+
+<unaryop> ::= "-" | "!"
+-- אופרטורים יונאריים: שלילה או פעולת מנע
+
+<function_declaration> ::= "defun" <identifier> "(" <param_list> ")" "{" <statement_list> "}"
+-- הכרזת פונקציה עם שם, פרמטרים ובלוק של פקודות
+
+<param_list> ::= <identifier> | <identifier> "," <param_list> | ""
+-- רשימת פרמטרים לפונקציה, יכולה להיות ריקה
+
+<function_call> ::= <identifier> "(" <arg_list> ")"
+-- קריאה לפונקציה עם רשימת ארגומנטים
+
+<arg_list> ::= <expression> | <expression> "," <arg_list> | ""
+-- רשימת ארגומנטים לקריאה לפונקציה, יכולה להיות ריקה
+
+<if_statement> ::= "if" <expression> <block> [<else_clause>]
+-- פקודת `if` עם ביטוי תנאי ובלוק קוד, יכול להיות בלוק `else`
+
+<if_expression> ::= "if" <expression> <expression> "else" <expression>
+-- ביטוי `if` בתוך ביטוי אחר (כמו תנאי)
+
+<else_clause> ::= "else" <block>
+-- בלוק `else` שמופעל אם התנאי ב-`if` לא מתקיים
+
+<block> ::= "{" <statement_list> "}"
+-- בלוק קוד עם רשימת פקודות
+
+<lambda_expression> ::= "lambd" "(" <param_list> ")" <expression>
+-- ביטוי למבדה (פונקציה אנונימית) עם פרמטרים וביטוי
+
+<integer> ::= [0-9]+
+-- מספר שלם
+
+<boolean> ::= "True" | "False"
+-- ערכים בוליאניים (אמת/שקר)
+
+<identifier> ::= [a-zA-Z_][a-zA-Z0-9_]*
+-- מזהה: שם משתנה או פונקציה, שמתחיל באות או קו תחתון וכולל אותיות, מספרים או קווים תחתונים
