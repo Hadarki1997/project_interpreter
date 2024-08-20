@@ -29,7 +29,6 @@ def run_file(file_path):
 
 if __name__ == "__main__":
     import sys
-
     if len(sys.argv) == 2:
         input_filename = sys.argv[1]
         if not input_filename.endswith('.lambda'):
