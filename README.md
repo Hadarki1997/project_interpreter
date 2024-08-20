@@ -7,7 +7,7 @@
 due to the principle of immutability, variable assignments are not supported. Instead, values are passed directly to functions, and results are returned without modifying any state. This ensures that all data remains unchanged throughout the execution of the program.
 #### Example of Immutability:
 
-```
+```bush
 defun add(a, b) { a + b }
 add(3, 4))
 ```
@@ -21,12 +21,16 @@ In this example, instead of assigning the result to a variable, the result is di
 Lambda expressions (anonymous functions) are defined and used inline without variable assignments. This aligns with the immutability principle.
 
 #### Example of Lambda Expression:
+```bush
 lambd(x, y) (x + y)(3, 4)
+```
 This lambda function takes two arguments, x and y, adds them, and the result is immediately used.
 
 You can use lambda expressions directly within other expressions or function calls, but they cannot be assigned to variables due to the immutability constraint.
 #### Another Example:
+```bush
 lambd(x) (x * x)(5)
+```
 This squares the number 5 and prints the result.
 
 </details>
