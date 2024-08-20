@@ -7,7 +7,7 @@
 due to the principle of immutability, variable assignments are not supported. Instead, values are passed directly to functions, and results are returned without modifying any state. This ensures that all data remains unchanged throughout the execution of the program.
 #### Example of Immutability:
 
-```python
+```
 defun add(a, b) { a + b }
 add(3, 4))
 ```
