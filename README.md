@@ -74,24 +74,16 @@ output:
 25
 ```
 And can return a boolean value:
-```
-zap eq(a,b){
-    return a == b;
-}
-println(eq(6,6));
-```
-output:
-```
-True
-```
-And their values can be used just like any other value for calculation or logic:
-```
+```bash
 defun isEqual(a, b) {
     a == b
 }
 isEqual(6, 6)
 ```
-
+output:
+```
+True
+```
 </details>
 <br/>
 <details>
