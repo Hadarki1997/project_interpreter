@@ -21,8 +21,8 @@ class Lexer:
     def __init__(self, text):
         self.text = text
         self.pos = 0
-        self.line = 1  # מספר שורה נוכחי
-        self.column = 1  # מספר עמודה נוכחי
+        self.line = 1  
+        self.column = 1    
         self.current_char = self.text[self.pos] if self.text else None
 
     # A function that moves the focus to the next character in the input and updates the current position
