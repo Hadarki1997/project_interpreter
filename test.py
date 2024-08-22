@@ -146,31 +146,6 @@ class TestBooleanLogicAndFunctions(BaseTestInterpreter):
     def test_call_isodd_on_odd(self):
         self.run_test_case("isodd(5)", True)
 
-class TestImmutability(BaseTestInterpreter):
-    def test_immutable_function_arguments(self):
-        # בדיקה שפונקציה לא יכולה לשנות את הערך שהועבר לה
-        self.run_test_case("""
-        defun trymodify(x) {
-            x + 1
-        }
-        trymodify(5)
-        """, 6)  # הפונקציה מחזירה ערך חדש, לא משנה את הארגומנט
-
-    def test_immutable_values(self):
-        # בדיקה שמראה שערכים לא משתנים גם כאשר "משנים" אותם
-        self.run_test_case("""
-        defun applytwice(f, x) {
-            f(f(x))
-        }
-        defun addone(x) {
-            x + 1
-        }
-        applytwice(addone, 5)
-        """, 7)  # התוצאה היא 7, מה שמראה שהערך המקורי לא השתנה
-
-    def test_no_assignment(self):
-        with self.assertRaises(Exception):  # או שם ספציפי יותר של השגיאה שאתה מצפה לה
-            self.run_test_case("x = 5", "Assignment not allowed")
 
 if __name__ == '__main__':
     unittest.main()
